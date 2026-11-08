@@ -1,0 +1,20 @@
+{
+  "name": "medilink",
+  "version": "1.0.0",
+  "description": "MediLink - Doctor Channeling Platform for Sri Lanka",
+  "private": true,
+  "scripts": {
+    "install:server": "npm install --prefix server",
+    "install:client": "npm install --prefix client",
+    "install:all": "npm install && npm run install:server && npm run install:client",
+    "dev:server": "npm run dev --prefix server",
+    "dev:client": "npm run dev --prefix client",
+    "dev": "concurrently -n \"server,client\" -c \"cyan,magenta\" \"npm run dev:server\" \"npm run dev:client\"",
+    "seed": "npm run seed --prefix server",
+    "test": "npm run test --prefix server",
+    "build:client": "npm run build --prefix client"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
